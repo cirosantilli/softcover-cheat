@@ -1,0 +1,28 @@
+# Generated LaTeX files
+*.aux
+*.log
+*.toc
+*.out
+*.tmp.*
+tmp/
+generated_polytex/
+
+.highlight_cache
+.softcover-book
+
+# Generated HTML files
+html/*.html
+
+# Generated EPUB/MOBI files
+epub/
+
+# Generated ebooks
+ebooks/
+
+# Media (likely to be huge)
+media/
+
+# Other miscellaneous files
+log/
+*.bak
+.DS_Store
