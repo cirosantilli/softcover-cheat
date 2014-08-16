@@ -2,6 +2,8 @@
 
 Cheat on [Softcover](https://github.com/softcover/softcover) capabilities.
 
+Tested with: <https://github.com/cirosantilli/softcover_vagrant>.
+
 The most important file is [chapters/chapter1.tex](chapters/chapter1.tex), which will contain every test that can be contained in a single file.
 
 My focus is on using Softcover for small tutorials, without allowing any style configuration. This is not the main intended use case for the software which focuses on large books for sale, and I'm investigating feasibility for tutorials here.
@@ -35,22 +37,30 @@ Cons:
 
     An online compiler service on Git push hook would be an ideal solution.
 
+## Important files
+
+- `Book`: the chapter order
+- `chapters/`: contains the chapters, either PolyTeX with `.tex` extension, or Markdown with `.md` extension. All files there will be compiled to PolyTeX files under `generated_polytex`. This means that you can see what PolyTeX Markdown generates.
+- `config/book.yml`: `title`, `subtitle`, `author` appear on the book title page.
+
 ## Extraneous files
 
 The following files are not gitignored, but can be removed without affecting the build / local view.
 
 - `config/marketing.yml`. Web interface metadata only.
-- `media`. Videos shown / sold on web interface.
-- `filename.tex`. Generated.
-- `.softcover-deploy`. Only used for deployment.
+- `media`.                Videos shown / sold on web interface.
+- `filename.tex`.         Generated.
+- `.softcover-deploy`.    Only used for deployment.
 
 The following files are only used to build / view the output style: if you don't care about customization like me, you can factor them out.
 
 - `epub`
 - `html`
 - `latex_styles`
-- the default `images`: placeholders, cover which is useless for tutorials,
-- `filename.tex`, where filename is set on `config/book.yml > filename`. Output file created from metadata on `Book` and `config/book.yml`, and thus that should be gitignored: <https://github.com/softcover/softcover/pull/116>.
+- the default `images`:  placeholders, cover which is useless for tutorials,
+- `filename.tex`:        whose exact name is set on `config/book.yml > filename`. Output file created from metadata on `Book` and `config/book.yml`, and thus that should be gitignored: <https://github.com/softcover/softcover/pull/116>.
+- `config/preamble.tex`: almost anything you put there will only work for PDF, so it does not interest me.
+- `config/lang.yml`:     translation of terms
 
 There are also a bunch of temporary files which are probably useful, but which I'd rather move to another directory because they distract me too much on the top-level:
 

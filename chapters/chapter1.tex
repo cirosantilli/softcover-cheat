@@ -1,4 +1,4 @@
-\chapter{Chapter 1 h1}
+\chapter{Chapter 1}
 
 \section{What PolyTeX maps to in HTML}
 
@@ -24,7 +24,7 @@
 
     \kode|href|: \href{http://example.com}{Example domain.}
 
-    TODO: \kode{url}? Using the package only works for PDF output.
+    TODO: \kode{url}? Using the package only works for PDF output. %\href{https://groups.google.com/forum/?hl=en#!topic/softcover-publishing/zFrDngqlYbY}{https://groups.google.com/forum/?hl=en#!topic/softcover-publishing/zFrDngqlYbY}
 
     Markdown autolinks map to \kode{href} in PolyTeX.
 
@@ -48,24 +48,25 @@
 
       Headers without labels cannot be referred to.
 
+  \subsection{Image}
+
   \subsection{Figure}
 
-    Small figure~\ref{fig-small}, large figure~\ref{fig-large}.
+    Figure~\ref{fig-simple} is a simple figure.
 
-    \begin{figure}[htb]
-      \includegraphics[width=2cm]{images/image.png}
-      \caption{caption here}
-      \label{fig-small}
+    \begin{figure}
+      \image{images/image.png}
+      \caption{Figure caption.}
+      \label{fig-simple}
     \end{figure}
 
-    \begin{figure}[htb]
-      \includegraphics[width=5cm]{images/image.png}
-      \caption{caption here}
-      \label{fig-large}
-    \end{figure}
+    Use the special command \kode{image} command to also center the image.
 
-    TODO how to center figures? If possible, without explicit center per figure environment?
-    \kode{floatrow} package only works for the PDF output.
+    Setting image size currently not possible but might be fixed: %\href{https://groups.google.com/forum/?hl=en#!topic/softcover-publishing/zldf2QceCGY}{https://groups.google.com/forum/?hl=en#!topic/softcover-publishing/zldf2QceCGY}
+
+    TODO specify image without the \kode{images/} prefix? Like \kode{graphicspath}. %\href{https://groups.google.com/forum/?hl=en#!newtopic/softcover-publishing}{https://groups.google.com/forum/?hl=en#!newtopic/softcover-publishing}
+
+    %\image{image.png}
 
   \subsection{Table}
 
@@ -76,36 +77,59 @@
       \label{table}
       \begin{tabular}{|r|lc|}
           \hline
-          a0    & a1 & a2 \\
-          bbbb0 & b1 & b2 \\
+          a & b & c \\
+          \hline
+          1 & 2 & 3 \\
+          4 & 5 & 5 \\
           \hline
           \multicolumn{3}{|c|}{Multicolumn} \\
           \hline
         \end{tabular}
     \end{table}
 
+    DRY table without columns specifiers through \kode{*}. TODO: not possible in HTML?
+
+    %at Table~\ref{dry-table}.
+    %
+    %\begin{table}
+    %  \caption{Table caption}
+    %  \label{table}
+    %  \begin{tabular}{*{9}{l}}
+    %    a & b \\
+    %    c & d \\
+    %  \end{tabular}
+    %\end{table}
+
   \subsection{Math}
 
-  \begin{equation}
-    \label{equation}
-    x^2
-  \end{equation}
+    Display equation: Equation~\ref{equation}.
 
-  Inline only with \kode{\(  \)}, not dollar \kode{\$}: \( x^2 \) \$x\^{}2\$.
+    \begin{equation}\label{equation}
+      x^2
+    \end{equation}
 
-  Equation reference: Equation~\ref{equation}.
+    Inline only with \kode{\(  \)}, not dollar \kode{\$}: \( x^2 \) \$x\^{}2\$.
 
-  \subsection{Code listing}
+  \subsection{Computer code listings}
 
-    TODO: how to escape brackets in kode?
+    TODO: how to escape braces and backslash in kode? %\kode{\asdf{}. %\href{https://groups.google.com/forum/?hl=en#!topic/softcover-publishing/YLez1SIyDQ0}{https://groups.google.com/forum/?hl=en#!topic/softcover-publishing/YLez1SIyDQ0}
 
     Inline with the custom \kode{kode} macro.
 
-    Display with the custom \kode{code} environment.
+    Display with the custom \kode{code} + \kode{codelisting} environments
 
-    Code aligned relative to the begin.
+    Code is aligned relative to the beginning of the line. TODO: align relative to begin as with \kode{lstautogobble}?
 
-    \begin{code}
-    Put your code here.
-    Put your code here.
-    \end{code}
+    Code reference: see listing~\ref{code}.
+
+    Code language and options set through insane magic comment...
+
+    \begin{codelisting}
+      \label{code}
+      \codecaption{Code caption.}
+      %= lang:latex, options: "linenos": true
+      \begin{code}
+\kode{line 1}
+\kode{line 2}
+      \end{code}
+    \end{codelisting}

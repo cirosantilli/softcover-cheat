@@ -7,7 +7,16 @@
 % \setdefaultlanguage{french}
 % \DeclareTextCommandDefault{\nobreakspace}{\leavevmode\nobreak\ }
 
-% Center all floats like images or tables.
-% Does not work for the HTML.
-%\usepackage{floatrow}
-\usepackage{url}
+% The following do not work on HTML, only PDF.
+
+%\usepackage{floatrow}   % Center all floats like images or tables.
+%\usepackage{url}        % url autolinks.
+
+% Doesn't work anywhere.
+%\usepackage{graphicx}
+%\graphicspath{{./images/}}
+
+% Makes the PDF look much more like the HTML output:
+% no indents and vertically separated paragraphs.
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{0.5cm}

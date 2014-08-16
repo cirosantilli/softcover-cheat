@@ -7,10 +7,17 @@
 % \setdefaultlanguage{french}
 % \DeclareTextCommandDefault{\nobreakspace}{\leavevmode\nobreak\ }
 
-% Center all floats like images or tables.
-% Does not work for the HTML.
-%\usepackage{floatrow}
-\usepackage{url}
+% The following do not work on HTML, only PDF.
+
+%\usepackage{floatrow}   % Center all floats like images or tables.
+%\usepackage{url}        % url autolinks.
+
+% Doesn't work anywhere.
+%\usepackage{graphicx}
+%\graphicspath{{./images/}}
+
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{0.5cm}
 
 \usepackage{latex_styles/softcover}
 \VerbatimFootnotes % Allows verbatim text in footnotes
@@ -25,7 +32,8 @@
 \maketitle
 \tableofcontents
 \mainmatter
-\include{chapters/chapter1}
-\include{chapters/chapter2}
-\include{chapters/chapter3}
+\include{generated_polytex/chapter1}
+\include{generated_polytex/chapter2}
+\include{generated_polytex/chapter3}
+\include{generated_polytex/md}
 \end{document}
