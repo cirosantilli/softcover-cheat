@@ -7,22 +7,25 @@
 % \setdefaultlanguage{french}
 % \DeclareTextCommandDefault{\nobreakspace}{\leavevmode\nobreak\ }
 
+% Center all floats like images or tables.
+% Does not work for the HTML.
+%\usepackage{floatrow}
+\usepackage{url}
+
 \usepackage{latex_styles/softcover}
 \VerbatimFootnotes % Allows verbatim text in footnotes
-\title{Title of the Book}
-\subtitle{Change me}
-\author{Author Name}
+\title{title config.yml}
+\subtitle{subtitle config.yml}
+\author{author config.yml}
 \date{}
 
 \begin{document}
 
-\includepdf{images/cover.pdf}
 \frontmatter
 \maketitle
 \tableofcontents
-\include{generated_polytex/preface}
 \mainmatter
-\include{generated_polytex/a_chapter}
-\include{generated_polytex/another_chapter}
-\include{generated_polytex/yet_another_chapter}
+\include{chapters/chapter1}
+\include{chapters/chapter2}
+\include{chapters/chapter3}
 \end{document}

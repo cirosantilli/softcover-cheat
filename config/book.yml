@@ -1,11 +1,21 @@
 ---
 slug: softcover-cheat
-filename: softcover-cheat
-title: Title of the Book
-subtitle: Change me
-description: Change me.
-author: Author Name
+
+# This will be the name of:
+# - the main .tex file build from Book.txt
+# - the ebook outputs
+# - the main file of the HTML output
+filename: index
+
+# Appear on the cover
+title: title config.yml
+subtitle: subtitle config.yml
+description: description config.yml
+author: author config.yml
 copyright: 2014
+
 uuid: 04170257-f5fb-4efd-adca-49301cca206c
+
+# Marketing only if you are going to generate previews.
 pdf_preview_page_range: 1..30
 epub_mobi_preview_chapter_range: 0..1

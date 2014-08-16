@@ -1,9 +1,17 @@
-cover
+# This file controls the book setup.
+# It is basically slightly modified and dumped into filename.tex.
+#
+# Empty lines in this file generate empty pages.
+#
+# If you have a cover image under images/cover.*.
+#cover
 frontmatter:
 maketitle
 tableofcontents
-preface.md
+# Regular file under `chapters/`.
+#preface.tex
 mainmatter:
-a_chapter.md
-another_chapter.md
-yet_another_chapter.md
+# Regular files under `chapters/`.
+chapter1.tex
+chapter2.tex
+chapter3.tex
