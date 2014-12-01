@@ -2,6 +2,10 @@
 
 Cheat on [Softcover](https://github.com/softcover/softcover) capabilities.
 
+Their closed source website that allows you to sell books: <https://www.softcover.io>
+
+Manual: <http://manual.softcover.io/book>
+
 Tested with: <https://github.com/cirosantilli/softcover_vagrant>.
 
 The most important file is [chapters/chapter1.tex](chapters/chapter1.tex), which will contain every test that can be contained in a single file.
